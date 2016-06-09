@@ -42,6 +42,10 @@ public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
     public String getGui() {
         return "/uii/administration_CopyAnchor.xhtml";
     }
+    
+    public String getDescription() {
+        return PLUGIN_NAME;
+    }
 
     public void copyAnchorFile() {
         if (log.isDebugEnabled()) {
