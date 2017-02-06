@@ -4,8 +4,8 @@
 ## Installation
 First place the plugin and the GUI file into their appropiate locations:
 ```sh
-mv plugin_intranda_administration_Linz-GUI.jar /opt/digiverso/goobi/plugins/GUI/
-mv plugin_intranda_administration_Linz-GITHASH.jar /opt/digiverso/goobi/plugins/administration/
+mv plugin_intranda_administration_copymasteranchor-GUI.jar /opt/digiverso/goobi/plugins/GUI/
+mv plugin_intranda_administration_copymasteranchor-GITHASH.jar /opt/digiverso/goobi/plugins/administration/
 ```
 
 Then you need to define a metadata called `InternalNote` in the ruleset file and add it to the volume. Example:
