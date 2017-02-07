@@ -8,6 +8,16 @@ mv plugin_intranda_administration_copymasteranchor-GUI.jar /opt/digiverso/goobi/
 mv plugin_intranda_administration_copymasteranchor-GITHASH.jar /opt/digiverso/goobi/plugins/administration/
 ```
 
+Add the following lines to the local `messages_de.properties`
+
+```ini
+noMasterProcessFound=Es konnte kein Mastervorgang mit diesem Identifier gefunden werden.
+noProcessesFound=Es konnten keine Vorg\u00E4nge mit diesem Identifier gefunden werden.
+AnchorCopyPlugin=Kopieren von Master-Anchor Daten
+copyAnchorFileToProcesses=Anchor Dateien ersetzen
+replacedProcesses=Alle B\u00E4nde wurden aktualisiert.
+```
+
 Then you need to define a metadata called `InternalNote` in the ruleset file and add it to the volume. Example:
 
 ```xml
