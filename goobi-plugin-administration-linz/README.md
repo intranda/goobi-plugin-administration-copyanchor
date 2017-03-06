@@ -38,7 +38,7 @@ Then you need to define a metadata called `InternalNote` in the ruleset file and
 ```
 
 ## Usage
-Login to Goobi and take a volume that you would like to become a Master Anchor. Open the METS-Editor, add a new metadata `InternalNote` and add as value `MasterAnchor`. Make the desired changes to the anchor and copy the Identifier of the anchor. Safe and exit.
+Login to Goobi and take a volume that you would like to become a Master Anchor. Open the METS-Editor, add a new metadata `InternalNote` and add as value `AnchorMaster`. Make the desired changes to the anchor and copy the Identifier of the anchor. Safe and exit.
 
 Switch to "Administration" -> "AnchorCopyPlugin", add the identifier to the only available input box and hit "copyAnchorFileToProcesses".
 
