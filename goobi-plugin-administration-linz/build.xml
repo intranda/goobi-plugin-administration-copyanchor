@@ -12,10 +12,16 @@
   <property name="pluginFolderWin" value="C:/Goobi/plugins/administration/"/>
   <property name="pluginFolderUnix" value="/opt/digiverso/goobi/plugins/administration/"/>
   <property name="dir.pmd" value="/opt/pmd"/>
+  <property name="jenkins.classpath" value="/nonexistant"/>
   <path id="classpath">
     <fileset dir="/opt/digiverso/goobilibs/lib"/>
     <fileset dir="/opt/digiverso/libs"/>
   </path>
+  <path id="jenkins-classpath">
+    <fileset dir="${jenkins.classpath}"/>
+    <fileset dir="/opt/digiverso/libs" />
+  </path>
+
   <tstamp>
     <format property="tstamped-file-name" pattern="yyyy-MM-dd" locale="en,UK"/>
   </tstamp>
@@ -70,6 +76,24 @@
   <!-- =================================
          Compile the sources
        ================================= -->
+	<target name="compile-jenkins" if="${jenkins}">
+		<echo>Using jenkins compiler</echo>
+    <javac destdir="${dir.build}" includeantruntime="false"  target="1.7" encoding="UTF8" source="1.7" debug="true" debuglevel="lines,vars,source">
+      <classpath refid="jenkins-classpath" />
+      <compilerarg value="-Xlint" />
+      <src path="src" />
+      </javac>
+  </target>
+
+  <target name="compile-eclipse" unless="jenkins">
+    <echo>Using eclipse compiler</echo>
+    <javac destdir="${dir.build}" includeantruntime="false"  target="1.7" encoding="UTF8" source="1.7" debug="true" debuglevel="lines,vars,source">
+      <classpath refid="classpath" />
+      <compilerarg value="-Xlint" />
+      <src path="src" />
+    </javac>
+  </target>
+
   <target name="compile">
     <echo>Using eclipse compiler</echo>
     <javac destdir="${dir.build}" includeantruntime="false" source="1.7" target="1.7">
@@ -122,7 +146,8 @@
      ================================= -->
   <target name="jar.runnable" depends="git.revision">
     <echo>Compile sources ...</echo>
-    <antcall target="compile"/>
+    <antcall target="compile-jenkins" />
+    <antcall target="compile-eclipse" />
     <echo>Generate Plugin list</echo>
     <pathconvert property="plugins.project" pathsep=" ">
       <mapper>
