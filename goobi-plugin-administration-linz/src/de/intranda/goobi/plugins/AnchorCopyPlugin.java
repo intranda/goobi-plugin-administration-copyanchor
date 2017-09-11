@@ -55,7 +55,7 @@ public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
         List<Integer> processList = MetadataManager.getProcessesWithMetadata("CatalogIDDigital", identifier);
 
         if (processList.size() == 0) {
-            Helper.setFehlerMeldung("noProcessesFound");
+            Helper.setFehlerMeldung("plugin_copymasteranchor_noProcessesFound");
             return;
         }
         if (log.isDebugEnabled()) {
@@ -75,7 +75,7 @@ public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
             }
         }
         if (masterFile == null) {
-            Helper.setFehlerMeldung("noMasterProcessFound");
+            Helper.setFehlerMeldung("plugin_copymasteranchor_noMasterProcessFound");
             return;
         }
         //        3.) master anchor in alle anderen Bände kopieren
@@ -93,7 +93,7 @@ public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
                 }
             }
         }
-        Helper.setMeldung("replacedProcesses");
+        Helper.setMeldung("plugin_copymasteranchor_replacedProcesses");
 
     }
 }
