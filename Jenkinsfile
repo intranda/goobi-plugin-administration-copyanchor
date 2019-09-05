@@ -12,7 +12,7 @@ pipeline {
   }
 
   triggers {
-    upstream 'goobi-workflow/goobi/master, goobi-workflow/goobi-commons-kb/master'
+    upstream 'goobi-workflow/goobi/master'
   }
   
   stages {
