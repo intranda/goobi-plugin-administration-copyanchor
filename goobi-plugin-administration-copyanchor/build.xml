@@ -1,0 +1,9 @@
+<project name="goobi-plugin-administration-copyanchor" default="devbuild">
+	<target name="devbuild">
+		<exec executable="mvn">
+			<arg value="package"/>
+		</exec>
+		<copy file="module-gui/target/plugin_intranda_administration_copymaster-GUI.jar" todir="/opt/digiverso/goobi/plugins/GUI/"/>
+		<copy file="module-main/target/plugin_intranda_administration_copymaster.jar" todir="/opt/digiverso/goobi/plugins/administration/"/>
+	</target>
+</project>
