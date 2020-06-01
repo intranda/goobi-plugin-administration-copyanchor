@@ -22,7 +22,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'mvn -f goobi-plugin-administration-linz/pom.xml install'
+        sh 'mvn -f goobi-plugin-administration-copymaster/pom.xml install'
         recordIssues enabledForFailure: true, aggregatingResults: true, tools: [java(), javaDoc()]
       }
     }
