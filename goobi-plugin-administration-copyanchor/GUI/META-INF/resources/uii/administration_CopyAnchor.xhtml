@@ -15,11 +15,17 @@
                             </h3>
                         </div>
                         <div class="box-content nopadding">
-                            <intranda:formInputText name="identifier" label="#{msgs.identifier}" field="#{AdministrationForm.administrationPlugin.identifier}" help="#{msgs.helpIdentifier}" fieldStyle="form-control" required="true" />
+                            <intranda:formInputText name="identifier" 
+                            	label="#{msgs.plugin_administration_copymasteranchor_identifier}" 
+                            	field="#{AdministrationForm.administrationPlugin.identifier}" 
+                            	help="#{msgs.plugin_administration_copymasteranchor_Identifier_help}" 
+                            	fieldStyle="form-control" required="true" />
                             <div class="form-actions">
-                                <h:commandLink styleClass="btn btn-green font-size-s margin-left-10 pull-right margin-bottom-more block" action="#{AdministrationForm.administrationPlugin.copyAnchorFile}">
+                                <h:commandLink 
+                                	styleClass="btn btn-green font-size-s margin-left-10 pull-right margin-bottom-more block" 
+                                	action="#{AdministrationForm.administrationPlugin.copyAnchorFile}">
                                     <i class="fa fa-copy margin-right-5"></i>
-                                    <h:outputText value="#{msgs.plugin_copymasteranchor_copyAnchorFileToProcesses}" />
+                                    <h:outputText value="#{msgs.plugin_administration_copymasteranchor_copyAnchorFileToProcesses}" />
                                 </h:commandLink>
                             </div>
                         </div>

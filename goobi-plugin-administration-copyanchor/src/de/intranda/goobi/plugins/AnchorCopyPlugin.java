@@ -12,6 +12,7 @@ import org.goobi.production.enums.PluginType;
 import org.goobi.production.plugin.interfaces.IAdministrationPlugin;
 import org.goobi.production.plugin.interfaces.IPlugin;
 
+import de.sub.goobi.config.ConfigurationHelper;
 import de.sub.goobi.helper.Helper;
 import de.sub.goobi.persistence.managers.MetadataManager;
 import net.xeoh.plugins.base.annotations.PluginImplementation;
@@ -22,7 +23,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
 
-    private static final String PLUGIN_NAME = "AnchorCopyPlugin";
+    private static final String PLUGIN_NAME = "plugin_administration_copymasteranchor";
     private static final String METADATA_TYPE = "InternalNote";
     private static final String METADATA_VALUE = "AnchorMaster";
 
@@ -47,40 +48,39 @@ public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
         return PLUGIN_NAME;
     }
 
+    /**
+     * method for copying the content from the master anchor over to all volumes with the same identifier
+     */
     public void copyAnchorFile() {
-        if (log.isDebugEnabled()) {
-            log.debug("replace anchor files for " + identifier);
-        }
-        //        alle Vorgänge mit dem Identifier suchen
+        log.debug("replace anchor files for " + identifier);
+        // find all processes with the same identifier
         List<Integer> processList = MetadataManager.getProcessesWithMetadata("CatalogIDDigital", identifier);
 
         if (processList.size() == 0) {
-            Helper.setFehlerMeldung("plugin_copymasteranchor_noProcessesFound");
+            Helper.setFehlerMeldung("plugin_administration_copymasteranchor_noProcessesFound");
             return;
         }
-        if (log.isDebugEnabled()) {
-            log.debug(processList.size() + " processes found");
-        }
+        log.debug(processList.size() + " processes found");
 
-        //        Master Vorgang mit dem Identifier suchen
+        // find master process with identifier
         Path masterFile = null;
         for (Integer id : processList) {
             List<StringPair> spl = MetadataManager.getMetadata(id);
             for (StringPair sp : spl) {
                 if (sp.getOne().equals(METADATA_TYPE) && sp.getTwo().equals(METADATA_VALUE)) {
                     // copy external master to current process
-                    masterFile = Paths.get("/opt/digiverso/goobi/metadata/" + id + "/meta_anchor.xml");
+                    masterFile = Paths.get(ConfigurationHelper.getInstance().getMetadataFolder() + id + "/meta_anchor.xml");
                     break;
                 }
             }
         }
         if (masterFile == null) {
-            Helper.setFehlerMeldung("plugin_copymasteranchor_noMasterProcessFound");
+            Helper.setFehlerMeldung("plugin_administration_copymasteranchor_noMasterProcessFound");
             return;
         }
-        //        3.) master anchor in alle anderen Bände kopieren
+        // copy master anchor into all volumes
         for (Integer id : processList) {
-            Path destination = Paths.get("/opt/digiverso/goobi/metadata/" + id + "/meta_anchor.xml");
+            Path destination = Paths.get(ConfigurationHelper.getInstance().getMetadataFolder() + id + "/meta_anchor.xml");
             if (!destination.equals(masterFile)) {
                 try {
                     if (log.isDebugEnabled()) {
@@ -93,7 +93,6 @@ public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
                 }
             }
         }
-        Helper.setMeldung("plugin_copymasteranchor_replacedProcesses");
-
+        Helper.setMeldung("plugin_administration_copymasteranchor_replacedProcesses");
     }
 }
