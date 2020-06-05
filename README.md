@@ -10,8 +10,8 @@ Detail | Description
 --- | ---
 **Plugin identifier**       | intranda_step_imageQA
 **Plugin type**             | Administration plugin
-**Documentation (German)**  | - still to be written -
-**Documentation (English)** | - still to be written -
+**Documentation (German)**  | https://docs.goobi.io/goobi-workflow-plugins-de/administration-plugins/plugin_intranda_administration_copyanchor
+**Documentation (English)** | https://docs.goobi.io/goobi-workflow-plugins-en/administration-plugins/plugin_intranda_administration_copyanchor
 
 ## Goobi details
 
