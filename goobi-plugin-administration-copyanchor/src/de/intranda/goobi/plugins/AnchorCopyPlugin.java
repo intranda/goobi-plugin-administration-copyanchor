@@ -23,7 +23,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
 
-    private static final String PLUGIN_NAME = "plugin_administration_copymasteranchor";
+    private static final String PLUGIN_NAME = "intranda_administration_copymasteranchor";
     private static final String METADATA_TYPE = "InternalNote";
     private static final String METADATA_VALUE = "AnchorMaster";
 
