@@ -3,7 +3,7 @@
 		<exec executable="mvn">
 			<arg value="package"/>
 		</exec>
-		<copy file="module-gui/target/plugin_intranda_administration_copymaster-GUI.jar" todir="/opt/digiverso/goobi/plugins/GUI/"/>
-		<copy file="module-main/target/plugin_intranda_administration_copymaster.jar" todir="/opt/digiverso/goobi/plugins/administration/"/>
+		<copy file="module-gui/target/plugin_intranda_administration_copyanchor-GUI.jar" todir="/opt/digiverso/goobi/plugins/GUI/"/>
+		<copy file="module-main/target/plugin_intranda_administration_copyanchor.jar" todir="/opt/digiverso/goobi/plugins/administration/"/>
 	</target>
 </project>
