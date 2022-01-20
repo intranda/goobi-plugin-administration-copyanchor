@@ -41,7 +41,7 @@ public @Data class AnchorCopyPlugin implements IAdministrationPlugin, IPlugin {
 
     @Override
     public String getGui() {
-        return "/uii/administration_CopyAnchor.xhtml";
+        return "/uii/plugin_administration_copyanchor.xhtml";
     }
     
     public String getDescription() {
