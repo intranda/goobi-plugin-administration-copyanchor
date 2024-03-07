@@ -7,7 +7,7 @@
     <relativePath />
   </parent>
   <groupId>io.goobi.workflow.plugin</groupId>
-  <artifactId>plugin-administration-goobi-plugin-administration-copyanchor</artifactId>
+  <artifactId>plugin-administration-copyanchor</artifactId>
   <packaging>pom</packaging>
   <modules>
     <module>module-base</module>

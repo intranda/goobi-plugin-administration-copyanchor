@@ -2,10 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.goobi.workflow.plugin</groupId>
-    <artifactId>plugin-administration-goobi-plugin-administration-copyanchor</artifactId>
+    <artifactId>plugin-administration-copyanchor</artifactId>
     <version>24.03-SNAPSHOT</version>
   </parent>
-  <artifactId>plugin-administration-goobi-plugin-administration-copyanchor-gui</artifactId>
+  <artifactId>plugin-administration-copyanchor-gui</artifactId>
   <packaging>jar</packaging>
   <build>
     <resources>
