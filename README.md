@@ -1,34 +1,39 @@
-### Goobi Adminplugin to copy Master-Anchor files into all volumes
+# Goobi workflow Plugin: goobi-plugin-administration-copyanchor
 
+<img src="https://goobi.io/wp-content/uploads/logo_goobi_plugin.png" align="right" style="margin:0 0 20px 20px;" alt="Plugin for Goobi workflow" width="175" height="109">
 
-## Installation
-First place the plugin and the GUI file into their appropiate locations:
-```sh
-mv plugin_intranda_administration_copymasteranchor-GUI.jar /opt/digiverso/goobi/plugins/GUI/
-mv plugin_intranda_administration_copymasteranchor-GITHASH.jar /opt/digiverso/goobi/plugins/administration/
-```
+This Administration plugin for Goobi workflow allows to copy an anchor file to all associated volume processes.
 
-Then you need to define a metadata called `InternalNote` in the ruleset file and add it to the volume. Example:
+This is a plugin for Goobi workflow, the open source workflow tracking software for digitisation projects. More information about Goobi workflow is available under https://goobi.io. If you want to get in touch with the user community simply go to https://community.goobi.io.
 
-```xml
-  <MetadataType>
-    <Name>InternalNote</Name>
-    <language name="de">Interne Goobi-Anmerkung</language>
-    <language name="en">Internal Note for Goobi</language>
-  </MetadataType>
+## Plugin details
 
+More information about the functionality of this plugin and the complete documentation can be found in the central documentation area at https://docs.goobi.io
 
-  <DocStrctType topStruct="true">
-    <Name>PeriodicalVolume</Name>
-    <language name="de">Zeitschriften-Band</language>
-    <language name="en">Periodical Volume</language>
-    <!-- more here -->
-    <metadata num="*">InternalNote</metadata>
-  </DocStrctType>
-```
+Detail                      | Description
+--------------------------- | ----------------------
+**Plugin identifier**       | intranda_administration_copymasteranchor
+**Plugin type**             | administration
+**Licence**                 | GPL 2.0 or newer
+**Documentation (German)**  | https://docs.goobi.io/workflow-plugins/v/eng/administration/goobi-plugin-administration-copyanchor
+**Documentation (English)** | https://docs.goobi.io/workflow-plugins/v/ger/administration/goobi-plugin-administration-copyanchor
 
-## Usage
-Login to Goobi and take a volume that you would like to become a Master Anchor. Open the METS-Editor, add a new metadata `InternalNote` and add as value `AnchorMaster`. Make the desired changes to the anchor and copy the Identifier of the anchor. Safe and exit.
+## Goobi details
 
-Switch to "Administration" -> "AnchorCopyPlugin", add the identifier to the only available input box and hit "copyAnchorFileToProcesses".
+Goobi workflow is an open source web application to manage small and large digitisation projects mostly in cultural heritage institutions all around the world. More information about Goobi can be found here:
 
+Detail                      | Description
+--------------------------- | ---------------------------
+**Goobi web site**          | https://www.goobi.io
+**Goobi community**         | https://community.goobi.io
+**Goobi documentation**     | https://docs.goobi.io
+
+## Development
+
+This plugin was developed by intranda. If you have any issues, feedback, question or if you are looking for more information about Goobi workflow, Goobi viewer and all our other developments that are used in digitisation projects please get in touch with us.  
+
+Contact                     | Details
+--------------------------- | ----------------------------------------------------
+**Company name**            | intranda GmbH
+**Address**                 | Bertha-von-Suttner-Str. 9, 37085 Göttingen, Germany
+**Web site**                | https://www.intranda.com
