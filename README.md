@@ -15,8 +15,8 @@ Detail                      | Description
 **Plugin identifier**       | intranda_administration_copymasteranchor
 **Plugin type**             | administration
 **Licence**                 | GPL 2.0 or newer
-**Documentation (German)**  | https://docs.goobi.io/workflow-plugins/v/eng/administration/goobi-plugin-administration-copyanchor
-**Documentation (English)** | https://docs.goobi.io/workflow-plugins/v/ger/administration/goobi-plugin-administration-copyanchor
+**Documentation (German)**  | https://docs.goobi.io/workflow-plugins/v/ger/administration/goobi-plugin-administration-copyanchor
+**Documentation (English)** | https://docs.goobi.io/workflow-plugins/v/eng/administration/goobi-plugin-administration-copyanchor
 
 ## Goobi details
 
