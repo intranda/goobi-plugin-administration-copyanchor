@@ -3,6 +3,10 @@ title: Copy Master-Anchor
 identifier: intranda_administration_copymasteranchor
 description: Goobi Administration Plugin für das Kopieren einer Anchor-Datei zu allen zugehörigen Bänden
 published: true
+keywords:
+    - Goobi workflow
+    - Plugin
+    - Administration Plugin
 ---
 
 ## Einführung
