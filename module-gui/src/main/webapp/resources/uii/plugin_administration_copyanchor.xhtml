@@ -6,7 +6,8 @@
     xmlns:h="http://xmlns.jcp.org/jsf/html"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:intranda="http://xmlns.jcp.org/jsf/composite/composites"
-    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:util="http://goobi.io/util">
 
     <composite:interface>
     </composite:interface>
@@ -19,7 +20,7 @@
                         boxForm="true"
                         boxPadding="false"
                         boxType="action"
-                        icon="fa fa-plug"
+                        icon="plug"
                         title="#{msgs[AdministrationForm.administrationPlugin.title]}">
                         <intranda:formInputText
                             name="identifier"
@@ -32,10 +33,7 @@
                             <button
                                 class="btn btn-success"
                                 jsf:action="#{AdministrationForm.administrationPlugin.copyAnchorFile}">
-                                <span class="fa fa-copy" />
-                                <span>
-                                    <h:outputText value="#{msgs.plugin_administration_copymasteranchor_copyAnchorFileToProcesses}" />
-                                </span>
+                                <util:icon-text icon="copy" text="#{msgs.plugin_administration_copymasteranchor_copyAnchorFileToProcesses}" />
                             </button>
                         </div>
                     </intranda:box>
