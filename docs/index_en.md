@@ -74,7 +74,7 @@ This metadata must now be allowed within the definition of the volumes. This is 
   <Name>PeriodicalVolume</Name>
   <language name="de">Zeitschriftenband</language>
   <language name="en">Periodical volume</language>
-  <!-- Definitions of other metadata and structure elemtents skipped here -->
+  <!-- Definitions of other metadata and structure elements skipped here -->
   <metadata num="*">InternalNote</metadata>
 </DocStrctType>
 ```
